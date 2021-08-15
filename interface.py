@@ -1,5 +1,5 @@
 from PyQt6 import QtGui, QtWidgets, QtCore
-from PyQt6.QtWidgets import QMainWindow, QFileDialog, QMessageBox, QWidget
+from PyQt6.QtWidgets import QMainWindow, QMessageBox, QWidget
 from MainWindow import Ui_MainWindow
 import sys
 import main as mn

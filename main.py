@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup as bs
 from datetime import datetime
 import re
 import sqlite3
-import os
 
 class Series():
     
