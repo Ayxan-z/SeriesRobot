@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Tapılan Fayllar</string>
+   <string>Tapılan dizilər</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="leftMargin">

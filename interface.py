@@ -250,8 +250,7 @@ class Window(QMainWindow):
         
         return result
         
-        
-        
+    
 
 app = QtWidgets.QApplication(sys.argv)
 wnd = Window()

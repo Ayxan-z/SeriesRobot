@@ -3,11 +3,12 @@ from bs4 import BeautifulSoup as bs
 from datetime import datetime
 import re
 import sqlite3
+import os
 
 class Series():
     
     def __init__(self):
-        self.connection = sqlite3.connect("C:\\Users\\shahs\\Documents\\Data_base\\Series_reminder.db")
+        self.connection = sqlite3.connect(os.getcwd() + "\\Series_reminder.db")
         self.cursor = self.connection.cursor()
         self._createTable()
         
