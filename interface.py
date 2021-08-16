@@ -7,7 +7,7 @@ from Form import Ui_Form
 from UpdateSeriesWindow import Ui_updateSeriesWindow
 import webbrowser
 import rc_icons
-
+# new
 class Window3(QWidget):
         
     def __init__(self):
