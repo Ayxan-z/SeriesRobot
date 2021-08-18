@@ -100,8 +100,8 @@ class Series():
         self.connection.commit()
         self._createTable()
 
-    @classmethod
-    def searchEpisode(cls, url, season, episode):
+    @staticmethod
+    def searchEpisode(url, season, episode):
         
         season_copy = season
         season_url =  url[:url.find('?')] + 'episodes' + '?' + 'season='
