@@ -27,7 +27,7 @@ class Window3(QWidget):
         link = self.y.lineEdit_2.text()
         season = self.y.lineEdit_3.text()
         episode = self.y.lineEdit_4.text()
-        print(self.name, name, link, season, episode)
+
         x = self.series.seriesUpdate(self.name, name, link, season, episode)
         
         if x == 'Link və ya bölüm sırası səhvdi!':

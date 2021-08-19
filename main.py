@@ -70,7 +70,6 @@ class Series():
     def seriesUpdate(self, name, name_new, link, season, episode):
         incoming_data = self._seriesRollCall(name)
 
-        print(incoming_data)
         name_new = name_new if name_new else incoming_data[0][0]
         link = link if link else incoming_data[0][1]
         season = season if season else incoming_data[0][2]
@@ -124,7 +123,7 @@ class Series():
             
             except:
                 return -1
-            
+
             for i, j in zip(find_episode, find_date):
                 i = i.text
                 j = j.text
@@ -149,8 +148,16 @@ class Series():
                     if (datetime.strptime(j, '%d %b %Y') - date_now).days < 0:
                         cnt += 1
 
-            if not soup.find_all('a',{'id':'load_next_episodes'}) or cnt == 0:
+            next_episode = soup.find_all('a',{'id':'load_next_episodes'})
+            if not next_episode or cnt == 0:
                 break 
+            
+            try:
+                if next_episode[0].text == 'Unknown Season':
+                    break
+            
+            except:
+                pass
             
             season = str(int(season) + 1)
 
