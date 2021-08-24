@@ -75,7 +75,7 @@ class Window(QMainWindow):
         self.ui.pushButton_7.clicked.connect(self.showSeries)
         self.ui.pushButton_8.clicked.connect(self.deleteSeries)
         
-        self.ui.actionGitHub.triggered.connect(lambda : webbrowser.open("https://github.com/Ayxan3-14/Projects"))
+        self.ui.actionGitHub.triggered.connect(lambda : webbrowser.open("https://github.com/Ayxan-z/SeriesRobot"))
         self.ui.actionHaqq_nda.triggered.connect(self.about)
     
     
