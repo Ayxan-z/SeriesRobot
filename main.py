@@ -139,15 +139,21 @@ class Series():
                     break
 
                 x = re.search("([0-9]+)\D+([0-9]+)", i)
+                if "https://www.imdb.com/title/tt10795658/?ref_=ttep_ep_tt" == url:
+                    print(x)
                 if x.group(1) == season_copy:
 
                     if int(x.group(2)) >= int(episode) and (datetime.strptime(j, '%d %b %Y') - date_now).days < 0:
                         cnt += 1
 
                 else:
-                    if (datetime.strptime(j, '%d %b %Y') - date_now).days < 0:
-                        cnt += 1
-
+                    try:
+                        if (datetime.strptime(j, '%d %b %Y') - date_now).days < 0:
+                            cnt += 1
+                    
+                    except ValueError:
+                        break
+                        
             next_episode = soup.find_all('a',{'id':'load_next_episodes'})
             if not next_episode or cnt == 0:
                 break 
