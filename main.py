@@ -116,11 +116,11 @@ class Series():
 
                 soup = bs(html,"html.parser")
                 find_episode = soup.find_all('div',{'class':'hover-over-image zero-z-index'})
+                if find_episode == []:
+                    find_episode = soup.find_all('div',{'class':'hover-over-image zero-z-index no-ep-poster'})
+
                 find_date = soup.find_all('div',{'class':'airdate'})
-            
-            #except x:
-                #return 0
-            
+
             except:
                 return -1
 
@@ -139,8 +139,7 @@ class Series():
                     break
 
                 x = re.search("([0-9]+)\D+([0-9]+)", i)
-                if "https://www.imdb.com/title/tt10795658/?ref_=ttep_ep_tt" == url:
-                    print(x)
+
                 if x.group(1) == season_copy:
 
                     if int(x.group(2)) >= int(episode) and (datetime.strptime(j, '%d %b %Y') - date_now).days < 0:
@@ -159,12 +158,8 @@ class Series():
                 break 
             
             try:
-                if next_episode[0].text == 'Unknown Season':
-                    break
-            
-            except:
-                pass
+                if next_episode[0].text == 'Unknown Season': break
+            except: pass
             
             season = str(int(season) + 1)
-
         return cnt
